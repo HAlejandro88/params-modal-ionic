@@ -6,15 +6,21 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+<ion-content class="ion-padding">
+  <ion-item>
+    <ion-label>Awesome Label</ion-label>
+    <ion-input type="text" [(ngModel)]="value" clearInput></ion-input>
+  </ion-item>
+ <ion-button (click)="pushPage()" expand="block" fill="clear" shape="round">
+   router Function
+ </ion-button>
+ <ion-button (click)="openModal()" expand="block" fill="clear" shape="round">
+  Open Modal
+</ion-button>
+<ion-button (click)="openPopover($event)" expand="block" fill="clear" shape="round">
+  Open Popover
+</ion-button>
+<ion-button [routerLink]="['/second', value]" routerDirection="foward" expand="block" fill="clear" shape="round">
+  router Link
+</ion-button>
 </ion-content>
